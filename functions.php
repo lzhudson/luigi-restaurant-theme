@@ -23,7 +23,8 @@ function load_css() {
 add_action('wp_enqueue_scripts', 'load_css');
 
 function load_js() {
-    wp_register_script('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', array(), false, true);
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', get_template_directory_uri() . '/plugin-frameworks/jquery-3.2.1.min.js', array(), 1, 1,1);
     wp_enqueue_script('jquery');
 
     wp_register_script('bootstrap', get_template_directory_uri() . '/plugin-frameworks/bootstrap.min.js', array(), 1, 1, 1);
@@ -39,3 +40,7 @@ function load_js() {
     wp_enqueue_script('custom');
 }
 add_action('wp_enqueue_scripts', 'load_js');
+
+// Custom image sizes
+add_image_size('product_image_size_small', 400, 400, false);
+add_image_size('product_image_size_large', 700, 700, false);
