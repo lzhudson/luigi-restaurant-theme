@@ -44,3 +44,14 @@ add_action('wp_enqueue_scripts', 'load_js');
 // Custom image sizes
 add_image_size('product_image_size_small', 400, 400, false);
 add_image_size('product_image_size_large', 700, 700, false);
+
+
+// Menu Support
+add_theme_support('menus');
+
+// Register Menus
+register_nav_menus (
+    array(
+        'top-menu' => __('Top Menu', 'theme'),
+    )
+);
