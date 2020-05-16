@@ -48,6 +48,7 @@ add_image_size('product_image_size_large', 700, 700, false);
 
 // Menu Support
 add_theme_support('menus');
+add_theme_support('post-thumbnails');
 
 // Register Menus
 register_nav_menus (
